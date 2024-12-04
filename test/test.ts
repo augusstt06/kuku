@@ -5,10 +5,9 @@ describe("KukuCoin", function () {
   it("Should deploy KukuCoin contract and mint intial supply", async function () {
     const [owner] = await ethers.getSigners();
     const KukuCoin = await ethers.getContractFactory("KukuCoin");
-    const kukuCoin = await KukuCoin.deploy(ethers.parseEther("1000000"));
+    const amount = ethers.utils.parseEther("1000000");
+    const kukuCoin = await KukuCoin.deploy(amount);
 
-    expect(await kukuCoin.balanceOf(owner.address)).to.equal(
-      ethers.parseEther("1000000")
-    );
+    expect(await kukuCoin.balanceOf(owner.address)).to.equal(amount);
   });
 });
