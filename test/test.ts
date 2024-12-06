@@ -3,11 +3,12 @@ import { ethers } from "hardhat";
 
 describe("KukuCoin", function () {
   it("Should deploy KukuCoin contract and mint intial supply", async function () {
-    const [owner] = await ethers.getSigners();
     const KukuCoin = await ethers.getContractFactory("KukuCoin");
-    const amount = ethers.utils.parseEther("1000000");
-    const kukuCoin = await KukuCoin.deploy(amount);
+    const kukuCoin = await KukuCoin.deploy();
 
-    expect(await kukuCoin.balanceOf(owner.address)).to.equal(amount);
+    await kukuCoin.deployed();
+
+    const teamSupply = await kukuCoin.TEAM_SUPPLY();
+    expect(await kukuCoin.totalSupply()).to.equal(teamSupply);
   });
 });
