@@ -5,10 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract KukuCoin is ERC20, Ownable {
-    // 총 공급량을 1억 개로 설정
     uint256 public immutable TOTAL_SUPPLY;
-
-    // 분배 비율
+    
     uint256 public immutable TEAM_SUPPLY;
     uint256 public immutable COMMUNITY_SUPPLY;
     uint256 public immutable LIQUIDITY_SUPPLY;
