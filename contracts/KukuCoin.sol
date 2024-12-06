@@ -12,6 +12,9 @@ contract KukuCoin is ERC20, Ownable {
     uint256 public immutable LIQUIDITY_SUPPLY;
     uint256 public immutable RESERVE_SUPPLY;
 
+    uint256 public immutable MINIMUM_BALANCE;
+
+
     address[] public holders;
 
     constructor() ERC20("KukuCoin", "KUKU") Ownable(msg.sender) {
@@ -22,6 +25,8 @@ contract KukuCoin is ERC20, Ownable {
         LIQUIDITY_SUPPLY = TOTAL_SUPPLY * 30 / 100; 
         RESERVE_SUPPLY = TOTAL_SUPPLY * 15 / 100; 
 
+        // 에어드랍 최소 보유수량 설정
+        MINIMUM_BALANCE = 50 * 10 ** decimals();
         _mint(msg.sender, TEAM_SUPPLY);
     }
 
@@ -29,12 +34,12 @@ contract KukuCoin is ERC20, Ownable {
         _mint(to, amount);
     }
     // airdrop 함수
-    function airdrop(uint256 minimumBalance, uint256 amount) external onlyOwner{
+    function airdrop(uint256 amount) external onlyOwner{
         require(amount > 0, "Amount must be greater than 0");
 
         for (uint256 i=0; i < holders.length;i++){
             address holder = holders[i];
-            if (balanceOf(holder) >= minimumBalance){
+            if (balanceOf(holder) >= MINIMUM_BALANCE){
                 _mint(holder, amount);
             }
         }
