@@ -52,3 +52,17 @@ describe("KukuCoin", function () {
     });
   });
 });
+
+/**
+ * sepolia console에 입력한 코드
+const contractAddress = "0x2A2324644334e39E2a3AE8d8EE09567A9ec733A1"; 쿠크코인 배포 주소 
+const KukuCoin = await ethers.getContractFactory("KukuCoin");
+const kukuCoin = await KukuCoin.attach(contractAddress);
+const myAddress = "My metamask address"; 
+const balance = await kukuCoin.balanceOf(myAddress);
+console.log("My KukuCoin balance:", ethers.utils.formatUnits(balance, 18));
+const recipientAddress = "Recipient metamask address"; 
+const amountToSend = ethers.utils.parseUnits("10", 18); // 전송할 KukuCoin 양
+await kukuCoin.transfer(recipientAddress, amountToSend);
+console.log(`Transferred ${amountToSend} KukuCoin to ${recipientAddress}`);
+ */
