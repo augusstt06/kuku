@@ -8,7 +8,7 @@ KukuCoin smart contract is deployed at the following address:
 
 - **Address**: `0x2A2324644334e39E2a3AE8d8EE09567A9ec733A1`
 
-아래 링크에서 손쉽게 확인이 가능합니다.
+You can easily check it on the following link:
 https://sepolia.etherscan.io/address/0x2A2324644334e39E2a3AE8d8EE09567A9ec733A1
 
 ## Main Features
