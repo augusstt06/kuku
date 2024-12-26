@@ -2,6 +2,10 @@
 
 KukuCoin is an ERC20 token based on the Ethereum blockchain, designed for community and team asset distribution. This project allows for secure and transparent token issuance and management through smart contracts.
 
+> 📌 The link below is Kuku Coin’s web frontend repository.
+>
+> [Kuku Coin Web Frontend](https://github.com/augusstt06/kuku-frontend)
+
 ## Deploy Address
 
 KukuCoin smart contract is deployed at the following address:
