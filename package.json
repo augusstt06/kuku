@@ -1,8 +1,12 @@
 {
-  "name": "kuku-coin",
+  "name": "kuku-contracts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "hardhat test",
+    "build": "hardhat compile"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
@@ -30,5 +34,6 @@
     "@openzeppelin/contracts": "^5.1.0",
     "dotenv": "^16.4.7",
     "solc": "^0.8.28"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
